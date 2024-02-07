@@ -19,7 +19,15 @@ public class Lexer {
     private static final int ERROR     =  4;
     private static final int STOP      = -2;
     // states table; THIS IS THE TABLE FOR BINARY NUMBERS; YOU SHOLD COMPLETE IT 
-    private static final int[][] stateTable = {{}, {}};
+    private static final int[][] stateTable = {
+        {    1,     4,     4,     2,     2,     2,     4,     4,     4,     4,     4,     4,     4,     4,     3,  STOP}, 
+        {    6, ERROR, ERROR,     6,     6, ERROR, ERROR,     5, ERROR,    15,    14, ERROR, ERROR, ERROR,     8,  STOP}, 
+        {    9, ERROR, ERROR,     9,     9,     9, ERROR, ERROR, ERROR,    15,    14, ERROR, ERROR, ERROR,     8,  STOP}, 
+        {   10, ERROR, ERROR,    10,    10,    10, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR,  STOP}, 
+        {   11,    11,    11,    11,    11,    11,    11,    11,    11,    11,    11,    11,    11,    11,    11,  STOP}, 
+        {   12, ERROR, ERROR,    12, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR, ERROR,  STOP}, 
+        {ERROR, ERROR, ERROR, ERROR, ERROR}
+    };
 
     public Lexer(String text) {
         this.text = text;
